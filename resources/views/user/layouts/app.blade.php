@@ -28,6 +28,8 @@
         </main>
     </div>
 
+    @include('user.layouts.footer')
+
     @include('sweetalert::alert')
 
     @include('user.layouts.script')

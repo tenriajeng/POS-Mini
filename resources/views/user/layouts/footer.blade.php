@@ -1,10 +1,7 @@
-<!-- Main Footer -->
 <footer class="main-footer">
-    <div class="container">
-
+    <div class="container-fluid text-center">
         <!-- Default to the left -->
-        <strong>Created by &nbsp; <a target="_blank"
-                href="https://www.linkedin.com/in/ilham-tenriajeng-a761b81ab/">Ilham
-                Tenriajeng</a>.</strong>
+        <strong>2019 &copy; PT Majoo Teknologi Indonesia</strong>
     </div>
 </footer>
+<footer></footer>
