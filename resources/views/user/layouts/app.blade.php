@@ -21,14 +21,15 @@
 </head>
 
 <body>
-    <div id="app">
-        @include('user.layouts.navbar')
-        <main class="py-4">
-            @yield('content')
-        </main>
+    <div id="page-container">
+        <div id="content-wrap">
+            @include('user.layouts.navbar')
+            <main class="py-4">
+                @yield('content')
+            </main>
+        </div>
+        @include('user.layouts.footer')
     </div>
-
-    @include('user.layouts.footer')
 
     @include('sweetalert::alert')
 
