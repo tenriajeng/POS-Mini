@@ -19,6 +19,10 @@
                 <div class="card">
                     <img src="{{ asset('asset/standard_repo.png') }}" class="card-img-top" alt="...">
                     <div class="card-body">
+                        <h5 class="card-title text-center py-2">majoo pro</h5>
+                        <h4 class="card-subtitle mb-2 text-center py-2">
+                            <sup>Rp </sup> 2.750.000
+                        </h4>
                         <p class="card-text">
                             ac ut consequat semper viverra nam libero justo laoreet sit amet cursus sit
                             amet dictum
@@ -26,7 +30,7 @@
                     </div>
                     <div class="card-footer" style="border: none; background-color: white">
                         <div class="row justify-content-center">
-                            <button class="btn btn-primary">Beli</button>
+                            <button class="btn btn-light" style="border: 1px solid black;">Beli</button>
                         </div>
                     </div>
                 </div>
@@ -36,6 +40,10 @@
                 <div class="card">
                     <img src="{{ asset('asset/paket-advance.png') }}" class="card-img-top" alt="...">
                     <div class="card-body">
+                        <h5 class="card-title text-center py-2">majoo Advance</h5>
+                        <h4 class="card-subtitle mb-2 text-center py-2">
+                            <sup>Rp </sup> 2.750.000
+                        </h4>
                         <p class="card-text">
                             ullamcorper a lacus vestibulum sed arcu non odio euismod lacinia at quis
                             risus sed vulputate odio ut enim blandit volutpat maecenas volutpat blandit aliquam etiam
@@ -44,7 +52,7 @@
                     </div>
                     <div class="card-footer" style="border: none; background-color: white">
                         <div class="row justify-content-center">
-                            <button class="btn btn-primary">Beli</button>
+                            <button class="btn btn-light" style="border: 1px solid black;">Beli</button>
                         </div>
                     </div>
                 </div>
@@ -54,6 +62,10 @@
                 <div class="card">
                     <img src="{{ asset('asset/paket-lifestyle.png') }}" class="card-img-top" alt="...">
                     <div class="card-body">
+                        <h5 class="card-title text-center py-2">majoo Lifestyle</h5>
+                        <h4 class="card-subtitle mb-2 text-center py-2">
+                            <sup>Rp </sup> 2.750.000
+                        </h4>
                         <p class="card-text">
                             eu augue ut lectus arcu bibendum at varius vel pharetra vel turpis nunc eget lorem dolor sed
                             viverra ipsum nunc aliquet bibendum enim facilisis gravida neque convallis a cras semper
@@ -64,7 +76,7 @@
                     </div>
                     <div class="card-footer" style="border: none; background-color: white">
                         <div class="row justify-content-center">
-                            <button class="btn btn-primary">Beli</button>
+                            <button class="btn btn-light" style="border: 1px solid black;">Beli</button>
                         </div>
                     </div>
                 </div>
@@ -74,6 +86,10 @@
                 <div class="card">
                     <img src="{{ asset('asset/paket-desktop.png') }}" class="card-img-top" alt="...">
                     <div class="card-body">
+                        <h5 class="card-title text-center py-2">majoo Desktop</h5>
+                        <h4 class="card-subtitle mb-2 text-center py-2">
+                            <sup>Rp </sup> 2.750.000
+                        </h4>
                         <p class="card-text">
                             urna cursus eget nunc scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt
                             augue interdum velit euismod in pellentesque massa placerat duis ultricies lacus sed turpis
@@ -84,7 +100,7 @@
                     </div>
                     <div class="card-footer" style="border: none; background-color: white">
                         <div class="row justify-content-center">
-                            <button class="btn btn-primary">Beli</button>
+                            <button class="btn btn-light" style="border: 1px solid black;">Beli</button>
                         </div>
                     </div>
                 </div>
