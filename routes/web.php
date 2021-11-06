@@ -29,4 +29,5 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['role:admi
     Route::resource('product', App\Http\Controllers\Admin\PorductController::class);
     Route::post('/file-upload', [App\Http\Controllers\Admin\FileUploadController::class, 'upload'])->name('file.upload');
     Route::resource('supplier', App\Http\Controllers\Admin\SupplierController::class);
+    Route::resource('customer', App\Http\Controllers\Admin\CostumerController::class);
 });
