@@ -41,6 +41,15 @@
                         </p>
                     </a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ route('admin.category.index') }}"
+                        class="nav-link {{ Request::is('admin/category*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-clipboard"></i>
+                        <p>
+                            Category
+                        </p>
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.sidebar-menu -->
