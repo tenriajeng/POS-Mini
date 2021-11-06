@@ -24,4 +24,5 @@ Route::get('/', [App\Http\Controllers\User\HomeController::class, 'index'])->nam
 Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['role:admin', 'auth']], function () {
 
     Route::get('/', [App\Http\Controllers\Admin\HomeController::class, 'index'])->name('home');
+    Route::resource('user', App\Http\Controllers\Admin\UserController::class);
 });

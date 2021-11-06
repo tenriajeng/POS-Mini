@@ -27,7 +27,12 @@
         @include('admin.layouts.sidebar')
 
         <!-- Content Wrapper. Contains page content -->
-        @yield('content')
+        <div class="content-wrapper">
+            <!-- Content Header (Page header) -->
+            @include('admin.layouts.page_header')
+            <!-- Content Header (Page header) -->
+            @yield('content')
+        </div>
         <!-- /.content-wrapper -->
 
         <!-- footer -->
@@ -35,6 +40,7 @@
         <!-- /.footer -->
 
     </div>
+    @include('sweetalert::alert')
     <!-- ./wrapper -->
     @include('admin.layouts.script')
 </body>
