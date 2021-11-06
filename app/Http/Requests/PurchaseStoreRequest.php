@@ -25,7 +25,10 @@ class PurchaseStoreRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'supplier_id' => 'required',
+            'product_id' => 'required',
+            'price' => 'required|numeric|min:1',
+            'stock' => 'required|numeric|min:1',
         ];
     }
 }
