@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Product;
+use App\Models\Supplier;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class ProductFactory extends Factory
@@ -22,6 +23,7 @@ class ProductFactory extends Factory
     public function definition()
     {
         return [
+            'supplier_id' => Supplier::all()->random()->id,
             'name' => $this->faker->unique()->text(12),
             'image' => $this->faker->randomElement(
                 [

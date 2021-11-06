@@ -7,6 +7,7 @@
             <th>Price</th>
             <th>Stock</th>
             <th>Status</th>
+            <th>Supplier</th>
             <th>Category</th>
             <th>Created At</th>
             <th>Action</th>
@@ -25,6 +26,9 @@
             <td>
                 {!! $product->status == 1 ? '<span class="badge bg-success">Active</span>' :'<span
                     class="badge bg-danger">Non Active</span>' !!}
+            </td>
+            <td>
+                {{ $product->supplier->name }}
             </td>
             <td>
                 @foreach (App\Models\ProductCategory::where('product_id',$product->id)->get() as $product_category)

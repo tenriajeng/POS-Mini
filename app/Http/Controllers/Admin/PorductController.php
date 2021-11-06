@@ -43,6 +43,7 @@ class PorductController extends Controller
     public function store(ProductStoreRequest $request)
     {
         $product = Product::create($request->only([
+            'supplier_id',
             'name',
             'image',
             'price',
@@ -94,6 +95,7 @@ class PorductController extends Controller
     public function update(ProductUpdateRequest $request, Product $product)
     {
         $product->update($request->only([
+            'supplier_id',
             'name',
             'image',
             'price',
