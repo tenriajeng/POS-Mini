@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Auth;
 
 class CustomerUpdateRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class CustomerUpdateRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return Auth::check();
     }
 
     /**
@@ -24,7 +25,15 @@ class CustomerUpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'first_name',
+            'last_name',
+            'email',
+            'phone',
+            'address',
+            'city',
+            'province',
+            'country',
+            'postal_code',
         ];
     }
 }

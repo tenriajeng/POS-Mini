@@ -40,7 +40,17 @@ class CostumerController extends Controller
      */
     public function store(CustomerStoreRequest $request)
     {
-        $customer = Customer::create($request->only(['name']));
+        $customer = Customer::create($request->only([
+            'first_name',
+            'last_name',
+            'email',
+            'phone',
+            'address',
+            'city',
+            'province',
+            'country',
+            'postal_code',
+        ]));
 
         Alert::success('Success', 'Customer created', '1500');
 
@@ -66,7 +76,7 @@ class CostumerController extends Controller
      */
     public function edit(Customer $customer)
     {
-        return view('admin.customer.update')->with('Customer', $customer);
+        return view('admin.customer.update')->with('customer', $customer);
     }
 
     /**
@@ -78,7 +88,17 @@ class CostumerController extends Controller
      */
     public function update(CustomerUpdateRequest $request, Customer $customer)
     {
-        $customer->update($request->only(['name']));
+        $customer->update($request->only([
+            'first_name',
+            'last_name',
+            'email',
+            'phone',
+            'address',
+            'city',
+            'province',
+            'country',
+            'postal_code',
+        ]));
 
         Alert::success('Success', 'Customer updated', '1500');
 
