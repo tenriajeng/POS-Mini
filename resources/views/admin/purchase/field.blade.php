@@ -60,7 +60,7 @@
         <label>Stock</label>
         <input id="stock" type="number" onkeyup="priceChange()" name="stock"
             value="{{ $purchase->stock ?? old('stock') }}" class="form-control @error('stock') is-invalid @enderror"
-            placeholder="Enter product stock">
+            placeholder="Enter stock">
         @error('stock')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -71,7 +71,7 @@
         <label>Price</label>
         <input id="price" type="number" onkeyup="priceChange()" name="price"
             value="{{ $purchase->price ?? old('price') }}" class="form-control @error('price') is-invalid @enderror"
-            placeholder="Enter product price">
+            placeholder="Enter price">
         @error('price')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>

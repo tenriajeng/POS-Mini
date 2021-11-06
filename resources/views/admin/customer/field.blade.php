@@ -2,7 +2,7 @@
     <div class="col-lg-4">
         <label>First Name</label>
         <input type="text" name="first_name" value="{{  $customer->first_name ?? old('first_name') }}"
-            class="form-control @error('first_name') is-invalid @enderror" placeholder="Enter product First Name">
+            class="form-control @error('first_name') is-invalid @enderror" placeholder="Enter First Name">
         @error('first_name')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -12,7 +12,7 @@
     <div class="col-lg-4">
         <label>Last Name</label>
         <input type="text" name="last_name" value="{{  $customer->last_name ?? old('last_name') }}"
-            class="form-control @error('last_name') is-invalid @enderror" placeholder="Enter product Last Name">
+            class="form-control @error('last_name') is-invalid @enderror" placeholder="Enter Last Name">
         @error('last_name')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -22,7 +22,7 @@
     <div class="col-lg-4">
         <label>Email</label>
         <input type="text" name="email" value="{{  $customer->email ?? old('email') }}"
-            class="form-control @error('email') is-invalid @enderror" placeholder="Enter product email">
+            class="form-control @error('email') is-invalid @enderror" placeholder="Enter email">
         @error('email')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -35,7 +35,7 @@
     <div class="col-lg-4">
         <label>Phone</label>
         <input type="text" name="phone" value="{{  $customer->phone ?? old('phone') }}"
-            class="form-control @error('phone') is-invalid @enderror" placeholder="Enter product phone">
+            class="form-control @error('phone') is-invalid @enderror" placeholder="Enter phone">
         @error('phone')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -45,7 +45,7 @@
     <div class="col-lg-4">
         <label>Address</label>
         <input type="text" name="address" value="{{  $customer->address ?? old('address') }}"
-            class="form-control @error('address') is-invalid @enderror" placeholder="Enter product address">
+            class="form-control @error('address') is-invalid @enderror" placeholder="Enter address">
         @error('address')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -55,7 +55,7 @@
     <div class="col-lg-4">
         <label>City</label>
         <input type="text" name="city" value="{{  $customer->city ?? old('city') }}"
-            class="form-control @error('city') is-invalid @enderror" placeholder="Enter product city">
+            class="form-control @error('city') is-invalid @enderror" placeholder="Enter city">
         @error('city')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -68,7 +68,7 @@
     <div class="col-lg-4">
         <label>Province</label>
         <input type="text" name="province" value="{{  $customer->province ?? old('province') }}"
-            class="form-control @error('province') is-invalid @enderror" placeholder="Enter product province">
+            class="form-control @error('province') is-invalid @enderror" placeholder="Enter province">
         @error('province')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -78,7 +78,7 @@
     <div class="col-lg-4">
         <label>Country</label>
         <input type="text" name="country" value="{{  $customer->country ?? old('country') }}"
-            class="form-control @error('country') is-invalid @enderror" placeholder="Enter product country">
+            class="form-control @error('country') is-invalid @enderror" placeholder="Enter country">
         @error('country')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -88,7 +88,7 @@
     <div class="col-lg-4">
         <label>Postal Code</label>
         <input type="text" name="postal_code" value="{{  $customer->postal_code ?? old('postal_code') }}"
-            class="form-control @error('postal_code') is-invalid @enderror" placeholder="Enter product postal code">
+            class="form-control @error('postal_code') is-invalid @enderror" placeholder="Enter postal code">
         @error('postal_code')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>

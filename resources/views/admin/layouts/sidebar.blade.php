@@ -97,10 +97,10 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('admin.purchase.index') }}" class="nav-link">
+                            <a href="{{ route('admin.sale.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
-                                    Purchase
+                                    Sale
                                 </p>
                             </a>
                         </li>
