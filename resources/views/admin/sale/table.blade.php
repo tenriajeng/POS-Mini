@@ -3,7 +3,10 @@
         <thead>
             <tr>
                 <th>#</th>
-                <th>Name</th>
+                <th>Customer</th>
+                <th>Product</th>
+                <th>Stock</th>
+                <th>Total Price</th>
                 <th>Created At</th>
                 <th>Action</th>
             </tr>
@@ -12,7 +15,10 @@
             @foreach ($sales as $key => $sale)
             <tr>
                 <td>{{ $sales->firstItem() + $key }}</td>
-                <td>{{ $sale->customer->name }}</td>
+                <td>{{ $sale->customer->first_name.' '.$sale->customer->last_name }}</td>
+                <td>{{ $sale->product->name }}</td>
+                <td>{{ $sale->stock }}</td>
+                <td>{{ $sale->price }}</td>
                 <td>{{ $sale->created_at }}</td>
                 <td>
                     <a href="{{ route('admin.sale.edit', $sale->id) }}" class="btn btn-info">

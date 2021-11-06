@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SaleStoreRequest;
 use App\Models\Product;
 use App\Models\Sales;
 use Illuminate\Http\Request;
+use Alert;
 
 class SalesController extends Controller
 {
@@ -36,9 +38,15 @@ class SalesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CategoryStoreRequest $request)
+    public function store(SaleStoreRequest $request)
     {
-        $category = Category::create($request->only(['name']));
+        $category = Sales::create($request->only([
+            'product_id',
+            'customer_id',
+            'stock',
+            'price',
+            'status',
+        ]));
 
         Alert::success('Success', 'category created', '1500');
 

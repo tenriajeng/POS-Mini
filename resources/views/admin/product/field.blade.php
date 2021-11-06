@@ -2,7 +2,7 @@
     <div class="col-lg-6">
         <label>Product Name</label>
         <input type="text" name="name" value="{{  $product->name ?? old('name') }}"
-            class="form-control @error('name') is-invalid @enderror" placeholder="Enter product name">
+            class="form-control @error('name') is-invalid @enderror" placeholder="Enter name">
         @error('name')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -60,7 +60,7 @@
     <div class="col-lg-2 col-md-4 col-sm-12 col-12">
         <label>Price </label>
         <input type="number" name="price" value="{{ $product->price ?? old('price') }}"
-            class="form-control @error('price') is-invalid @enderror" placeholder="Enter product price">
+            class="form-control @error('price') is-invalid @enderror" placeholder="Enter price">
         @error('price')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
@@ -71,7 +71,7 @@
     <div class="col-lg-2 col-md-4 col-sm-12 col-12">
         <label>Stock </label>
         <input type="number" name="stock" value="{{ $product->stock ?? old('stock') }}"
-            class="form-control @error('stock') is-invalid @enderror" placeholder="Enter product stock">
+            class="form-control @error('stock') is-invalid @enderror" placeholder="Enter stock">
 
         @error('stock')
         <span class="invalid-feedback" role="alert">
