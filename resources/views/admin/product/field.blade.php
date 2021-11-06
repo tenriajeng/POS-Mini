@@ -1,13 +1,19 @@
 <div class="form-group row">
     <div class="col-lg-6">
         <label>Product Name</label>
-        <input type="text" name="name" value="{{  $product->name ?? old('name') }}"
-            class="form-control @error('name') is-invalid @enderror" placeholder="Enter name">
-        @error('name')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-        @enderror
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <input type="text" name="name" class="form-control @error('name') is-invalid @enderror"
+                placeholder="supplier name" aria-label="supplier name" aria-describedby="basic-addon1"
+                value="{{ $product->name ?? old('name') }}" autocomplete="name" autofocus>
+            @error('name')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
     </div>
 
     <div class="col-lg-6">
