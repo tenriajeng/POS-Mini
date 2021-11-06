@@ -51,6 +51,15 @@
                     </a>
                 </li>
                 <li class="nav-item">
+                    <a href="{{ route('admin.supplier.index') }}"
+                        class="nav-link {{ Request::is('admin/supplier*') ? 'active' : '' }}">
+                        <i class="nav-icon fas fa-hotel"></i>
+                        <p>
+                            Supplier
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
                     <a href="{{ route('admin.product.index') }}"
                         class="nav-link {{ Request::is('admin/product*') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-box"></i>
