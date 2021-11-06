@@ -31,4 +31,5 @@ Route::group(['as' => 'admin.', 'prefix' => 'admin', 'middleware' => ['role:admi
     Route::resource('supplier', App\Http\Controllers\Admin\SupplierController::class);
     Route::resource('customer', App\Http\Controllers\Admin\CostumerController::class);
     Route::resource('purchase', App\Http\Controllers\Admin\PurchaseController::class);
+    Route::resource('sale', App\Http\Controllers\Admin\SalesController::class);
 });

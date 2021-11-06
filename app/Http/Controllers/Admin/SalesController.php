@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Product;
+use App\Models\Sales;
 use Illuminate\Http\Request;
 
 class SalesController extends Controller
@@ -14,7 +16,8 @@ class SalesController extends Controller
      */
     public function index()
     {
-        //
+        $sales = Sales::orderBy('created_at', 'DESC')->paginate(10);
+        return view('admin.sale.index')->with('sales', $sales);
     }
 
     /**
@@ -24,7 +27,7 @@ class SalesController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.sale.create');
     }
 
     /**
@@ -33,9 +36,13 @@ class SalesController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategoryStoreRequest $request)
     {
-        //
+        $category = Category::create($request->only(['name']));
+
+        Alert::success('Success', 'category created', '1500');
+
+        return redirect(route('admin.sale.index'));
     }
 
     /**
@@ -55,9 +62,9 @@ class SalesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Category $category)
     {
-        //
+        return view('admin.sale.update')->with('category', $category);
     }
 
     /**
@@ -67,9 +74,13 @@ class SalesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(CategoryUpdateRequest $request, Category $category)
     {
-        //
+        $category->update($request->only(['name']));
+
+        Alert::success('Success', 'category updated', '1500');
+
+        return redirect(route('admin.sale.index'));
     }
 
     /**
@@ -78,8 +89,12 @@ class SalesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        Alert::success('Success', 'category deleted', '1500');
+
+        return redirect(route('admin.sale.index'));
     }
 }
