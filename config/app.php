@@ -135,6 +135,7 @@ return [
     */
 
     'providers' => [
+        CloudinaryLabs\CloudinaryLaravel\CloudinaryServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         /*
          * Laravel Framework Service Providers...
@@ -189,6 +190,7 @@ return [
     */
 
     'aliases' => [
+        'Cloudinary' => CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary::class,
 
         'App' => Illuminate\Support\Facades\App::class,
         'Arr' => Illuminate\Support\Arr::class,
