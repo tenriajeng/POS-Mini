@@ -78,7 +78,8 @@
                     </a>
                 </li>
 
-                <li class="nav-item {{ Request::is('admin/purchase*') ? 'menu-is-opening menu-open' : '' }}">
+                <li
+                    class="nav-item {{ Request::is('admin/purchase*') || Request::is('admin/sale*') ? 'menu-is-opening menu-open' : '' }}">
                     <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-shopping-bag"></i>
                         <p>
@@ -97,7 +98,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('admin.sale.index') }}" class="nav-link">
+                            <a href="{{ route('admin.sale.index') }}"
+                                class="nav-link {{ Request::is('admin/sale*') ? 'active' : '' }}">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>
                                     Sale
