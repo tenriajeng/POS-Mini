@@ -23,17 +23,6 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
-        $this->insert();
-    }
-
-    private function insert()
-    {
-        User::create([
-            'username' => 'ilhamtenriajeng',
-            'name' => 'ilham',
-            'email' => 'ilhamtenriajeng03@gmail.com',
-            'password' => Hash::make('ilham123'),
-        ]);
     }
 
     /**
