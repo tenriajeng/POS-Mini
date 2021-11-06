@@ -25,6 +25,7 @@ class ProductUpdateRequest extends FormRequest
     public function rules()
     {
         return [
+            'supplier_id' => 'required',
             'name' => 'required|string|max:50|unique:products,name,' . $this->product->id,
             'price' => 'required|numeric|min:0',
             'stock' => 'required|numeric|min:0',

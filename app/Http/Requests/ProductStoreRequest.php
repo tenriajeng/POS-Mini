@@ -25,6 +25,7 @@ class ProductStoreRequest extends FormRequest
     public function rules()
     {
         return [
+            'supplier_id' => 'required',
             'name' => 'required|string|max:50|unique:products',
             'image' => 'required',
             'price' => 'required|numeric|min:0',

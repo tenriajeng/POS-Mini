@@ -15,6 +15,7 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
+        'supplier_id',
         'name',
         'image',
         'price',
@@ -22,4 +23,9 @@ class Product extends Model
         'description',
         'status',
     ];
+
+    public function supplier()
+    {
+        return $this->belongsTo(Supplier::class, 'supplier_id', 'id');
+    }
 }

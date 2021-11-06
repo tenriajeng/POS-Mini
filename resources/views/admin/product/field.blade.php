@@ -1,8 +1,23 @@
 <div class="form-group row">
-    <div class="col-12">
+    <div class="col-lg-6">
         <label>Product Name</label>
         <input type="text" name="name" value="{{  $product->name ?? old('name') }}"
             class="form-control @error('name') is-invalid @enderror" placeholder="Enter product name">
+        @error('name')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+    </div>
+    <div class="col-lg-6">
+        <label>Suplplier</label>
+        <select name="supplier_id" class="select2-1 form-control @error('status') is-invalid @enderror"
+            data-placeholder="Select Category" style="width: 100%;">
+            @foreach (App\Models\Supplier::all() as $supplier)
+            <option {{ $supplier->id == $product->supplier->id ? 'selected' : '' }} value="{{ $supplier->id }}"> {{
+                $supplier->name }} </option>
+            @endforeach
+        </select>
         @error('name')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
