@@ -9,16 +9,18 @@
         </span>
         @enderror
     </div>
+
     <div class="col-lg-6">
         <label>Suplplier</label>
         <select name="supplier_id" class="select2-1 form-control @error('status') is-invalid @enderror"
             data-placeholder="Select Category" style="width: 100%;">
             @foreach (App\Models\Supplier::all() as $supplier)
-            <option {{ $supplier->id == $product->supplier->id ? 'selected' : '' }} value="{{ $supplier->id }}"> {{
+            <option {{ isset($product) && ($supplier->id == $product->supplier->id) ? 'selected' : '' }}
+                value="{{ $supplier->id }}"> {{
                 $supplier->name }} </option>
             @endforeach
         </select>
-        @error('name')
+        @error('supplier_id')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
         </span>
@@ -28,22 +30,27 @@
 </div>
 
 <div class="form-group row">
+
     <div class="col-lg-6 col-md-12 col-sm-12 col-12">
         <label>Category </label>
         <select name="category[]" class="select2 form-control @error('status') is-invalid @enderror" multiple="multiple"
             data-placeholder="Select Category" style="width: 100%;">
             @foreach (App\Models\Category::all() as $item)
-            <option value="{{ $item->id }}" @foreach (App\Models\ProductCategory::where('product_id', $product->
+            <option value="{{ $item->id }}" @if (isset($product))
+                @foreach(App\Models\ProductCategory::where('product_id', $product->
                 id)->get() as $product_category)
                 @if($item->id == $product_category->category->id)
                 {{ 'selected' }}
                 @endif
-                @endforeach>
+                @endforeach
+                @endif
+                >
                 {{ $item->name }}
             </option>
             @endforeach
         </select>
-        @error('role')
+
+        @error('category[]')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
         </span>
@@ -52,7 +59,7 @@
 
     <div class="col-lg-2 col-md-4 col-sm-12 col-12">
         <label>Price </label>
-        <input type="number" name="price" value="{{  $product->price ?? old('price') }}"
+        <input type="number" name="price" value="{{ $product->price ?? old('price') }}"
             class="form-control @error('price') is-invalid @enderror" placeholder="Enter product price">
         @error('price')
         <span class="invalid-feedback" role="alert">
@@ -60,22 +67,25 @@
         </span>
         @enderror
     </div>
+
     <div class="col-lg-2 col-md-4 col-sm-12 col-12">
         <label>Stock </label>
-        <input type="number" name="stock" value="{{  $product->stock ?? old('stock') }}"
+        <input type="number" name="stock" value="{{ $product->stock ?? old('stock') }}"
             class="form-control @error('stock') is-invalid @enderror" placeholder="Enter product stock">
+
         @error('stock')
         <span class="invalid-feedback" role="alert">
             <strong>{{ $message }}</strong>
         </span>
         @enderror
     </div>
+
     <div class="col-lg-2 col-md-4 col-sm-12 col-12">
         <label>Status </label>
         <select name="status" class="select2-1 form-control @error('status') is-invalid @enderror"
             data-placeholder="Select Category" style="width: 100%;">
-            <option {{ $product->status == 0 ? 'selected' : '' }} value="0">Non Active</option>
-            <option {{ $product->status == 1 ? 'selected' : '' }} value="1">Active</option>
+            <option {{ isset($product) && $product->status == 0 ? 'selected' : '' }} value="0">Non Active</option>
+            <option {{ isset($product) && $product->status == 1 ? 'selected' : '' }} value="1">Active</option>
         </select>
         @error('status')
         <span class="invalid-feedback" role="alert">
