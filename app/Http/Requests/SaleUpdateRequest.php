@@ -27,7 +27,7 @@ class SaleUpdateRequest extends FormRequest
         return [
             'customer_id' => 'required',
             'product_id' => 'required',
-            'price' => 'required|numeric|min:0',
+            'price' => 'required|numeric|min:1',
             'stock' => 'required|numeric|min:1',
             'status' => 'required|numeric',
         ];
