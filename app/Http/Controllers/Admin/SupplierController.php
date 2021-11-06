@@ -70,7 +70,7 @@ class SupplierController extends Controller
      */
     public function edit(Supplier $supplier)
     {
-        return view('admin.supplier.update')->with('Suppler', $supplier);
+        return view('admin.supplier.update')->with('supplier', $supplier);
     }
 
     /**

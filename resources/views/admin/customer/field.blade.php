@@ -1,33 +1,52 @@
 <div class="form-group row">
     <div class="col-lg-4">
         <label>First Name</label>
-        <input type="text" name="first_name" value="{{  $customer->first_name ?? old('first_name') }}"
-            class="form-control @error('first_name') is-invalid @enderror" placeholder="Enter First Name">
-        @error('first_name')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-        @enderror
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <input type="text" name="first_name" class="form-control @error('first_name') is-invalid @enderror"
+                placeholder="First Name" aria-label="First Name" aria-describedby="basic-addon1"
+                value="{{ $customer->first_name ?? old('first_name') }}" autocomplete="first_name" autofocus>
+            @error('first_name')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
     </div>
     <div class="col-lg-4">
         <label>Last Name</label>
-        <input type="text" name="last_name" value="{{  $customer->last_name ?? old('last_name') }}"
-            class="form-control @error('last_name') is-invalid @enderror" placeholder="Enter Last Name">
-        @error('last_name')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-        @enderror
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">@</span>
+            </div>
+            <input type="text" name="last_name" class="form-control @error('last_name') is-invalid @enderror"
+                placeholder="Last name" aria-label="Last name" aria-describedby="basic-addon1"
+                value="{{ $customer->last_name ?? old('last_name') }}" autocomplete="last_name" autofocus>
+            @error('last_name')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
     </div>
     <div class="col-lg-4">
         <label>Email</label>
-        <input type="text" name="email" value="{{  $customer->email ?? old('email') }}"
-            class="form-control @error('email') is-invalid @enderror" placeholder="Enter email">
-        @error('email')
-        <span class="invalid-feedback" role="alert">
-            <strong>{{ $message }}</strong>
-        </span>
-        @enderror
+        <div class="input-group mb-3">
+            <input id="email" name="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2"
+                value="{{ $customer->email ?? old('email') }}" autocomplete="email" autofocus>
+            <div class="input-group-append">
+                <span class="input-group-text" id="basic-addon2">@example.com</span>
+            </div>
+
+            @error('email')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
+        </div>
     </div>
 </div>
 
