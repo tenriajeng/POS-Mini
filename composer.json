@@ -17,6 +17,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.3",
         "mockery/mockery": "^1.4.2",
+        "nesbot/carbon": "^2.54",
         "nunomaduro/collision": "^5.0",
         "phpunit/phpunit": "^9.3.3",
         "realrashid/sweet-alert": "^4.0",
