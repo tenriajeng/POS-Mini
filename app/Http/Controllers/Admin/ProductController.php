@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 use Alert;
 use App\Models\ProductCategory;
 
-class PorductController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -69,9 +69,11 @@ class PorductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($supplier_id)
     {
-        //
+        $product = Product::where('supplier_id', $supplier_id)->get();
+
+        return $product;
     }
 
     /**
