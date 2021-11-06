@@ -13,17 +13,17 @@ Update category
                 <div class="card">
                     <!-- ./card-header -->
                     <div class="card-body">
-                        <form method="POST" action="{{ route('admin.category.update', $category->id) }}">
+                        <form method="POST" action="{{ route('admin.sale.update', $sale->id) }}">
                             @method('PUT')
                             @csrf
-                            @include('admin.category.field')
+                            @include('admin.sale.field')
 
                             <div class="form-group row mb-0">
                                 <div class="col-md-8 offset-md-4">
                                     <button type="submit" class="btn btn-primary">
                                         Save
                                     </button>
-                                    <a href="{{ route('admin.category.index') }}" class="btn btn-danger">
+                                    <a href="{{ route('admin.sale.index') }}" class="btn btn-danger">
                                         Back
                                     </a>
                                 </div>

@@ -8,6 +8,7 @@ use App\Models\Product;
 use App\Models\Sales;
 use Illuminate\Http\Request;
 use Alert;
+use App\Http\Requests\SaleUpdateRequest;
 
 class SalesController extends Controller
 {
@@ -40,13 +41,32 @@ class SalesController extends Controller
      */
     public function store(SaleStoreRequest $request)
     {
-        $category = Sales::create($request->only([
+        $sales = Sales::create($request->only([
             'product_id',
             'customer_id',
             'stock',
             'price',
             'status',
         ]));
+
+        $product = Product::find($request->product_id);
+
+        if (is_null($product)) {
+
+            Alert::error('Error', 'Product not found');
+
+            return back();
+        }
+
+        $stock = $product->stock - $request->stock;
+
+        if ($stock < 0) {
+            Alert::error('Error', 'Product out of stock');
+
+            return back();
+        }
+
+        $product->update(['stock' => $stock]);
 
         Alert::success('Success', 'category created', '1500');
 
@@ -70,9 +90,9 @@ class SalesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Category $category)
+    public function edit(Sales $sale)
     {
-        return view('admin.sale.update')->with('category', $category);
+        return view('admin.sale.update')->with('sale', $sale);
     }
 
     /**
@@ -82,9 +102,33 @@ class SalesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(CategoryUpdateRequest $request, Category $category)
+    public function update(SaleUpdateRequest $request, Sales $sale)
     {
-        $category->update($request->only(['name']));
+        $product = Product::find($request->product_id);
+
+        $stock = $request->stock;
+
+        if ($sale->stock  != $request->stock) {
+            $stock = $product->stock + $sale->stock;
+
+            $stock = $stock - $request->stock;
+        }
+
+        if ($stock < 0) {
+            Alert::error('Error', 'Product out of stock');
+
+            return back();
+        }
+
+        $sale->update($request->only([
+            'product_id',
+            'customer_id',
+            'stock',
+            'price',
+            'status',
+        ]));
+
+        $product->update(['stock' => $stock]);
 
         Alert::success('Success', 'category updated', '1500');
 
@@ -97,9 +141,9 @@ class SalesController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Category $category)
+    public function destroy(Sales $sale)
     {
-        $category->delete();
+        $sale->delete();
 
         Alert::success('Success', 'category deleted', '1500');
 
