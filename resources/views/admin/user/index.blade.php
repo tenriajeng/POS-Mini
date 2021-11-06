@@ -19,6 +19,10 @@ User Menu
                     <div class="card-body">
                         @include('admin.user.table')
                     </div>
+                    <div class="card-footer">
+                        {!! $users->links() !!}
+                    </div>
+
                     <!-- /.card-body -->
                 </div>
                 <!-- /.card -->
