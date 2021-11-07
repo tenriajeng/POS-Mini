@@ -12,8 +12,24 @@ Supplier Menu
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{ route('admin.supplier.create') }}" class="btn btn-primary float-right">Create New
-                            supplier</a>
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <form action="{{ route('admin.supplier.index') }}" method="GET">
+                                    <div class="input-group">
+                                        <input class="form-control" name="search">
+                                        <div class="input-group-append">
+                                            <input class="btn btn-success" type="submit" value="search">
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-6">
+                                <a href="{{ route('admin.supplier.create') }}"
+                                    class="btn btn-primary float-right">Create New
+                                    supplier</a>
+                            </div>
+                        </div>
                     </div>
                     <!-- ./card-header -->
                     <div class="card-body">

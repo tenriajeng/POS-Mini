@@ -17,9 +17,17 @@ class PurchaseController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $purchases = PurchaseTransaction::orderBy('created_at', 'DESC')->paginate(10);
+        $query = PurchaseTransaction::orderBy('created_at', 'DESC');
+
+        if (isset($request['search'])) {
+            $date = date('Y-m-d', strtotime($request['search']));
+
+            $query->orWhere('created_at', 'like', '%' . $date . '%');
+        }
+
+        $purchases = $query->paginate(10);
         return view('admin.purchase.index')->with('purchases', $purchases);
     }
 

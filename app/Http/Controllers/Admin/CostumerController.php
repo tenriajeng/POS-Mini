@@ -16,9 +16,15 @@ class CostumerController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $customers = Customer::orderBy('created_at', 'DESC')->paginate(10);
+        $query = Customer::orderBy('created_at', 'DESC');
+
+        if (isset($request)) {
+            $query->orWhere('email', 'like', '%' . $request['search'] . '%');
+        }
+
+        $customers = $query->paginate(10);
         return view('admin.customer.index')->with('customers', $customers);
     }
 
