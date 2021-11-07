@@ -15,7 +15,7 @@ User Menu
                         <div class="row align-items-center">
                             <div class="col-6">
                                 <form action="{{ route('admin.user.index') }}" method="GET">
-                                    <div class="input-group mb-3">
+                                    <div class="input-group">
                                         <input class="form-control" name="search">
                                         <div class="input-group-append">
                                             <input class="btn btn-success" type="submit" value="search">

@@ -16,9 +16,16 @@ class CategoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $categories = Category::orderBy('created_at', 'DESC')->paginate(10);
+        $query =  Category::orderBy('created_at', 'DESC');
+
+        if (isset($request)) {
+            $query->orWhere('name', 'like', '%' . $request['search'] . '%');
+        }
+
+        $categories = $query->paginate(10);
+
         return view('admin.category.index')->with('categories', $categories);
     }
 
