@@ -1,7 +1,7 @@
 @extends('admin.layouts.app')
 
 @push('page_header')
-product Menu
+Product Menu
 @endpush
 
 @section('content')
