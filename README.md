@@ -10,11 +10,15 @@ $ composer install
 
 ## Migration
 
+please configure your .env before migrate
+
 ```sh
 $ php artisan migrate
 ```
 
 ## Seeder
+
+if you want to see seeders and factories, they are in the database directory
 
 ```sh
 $ php artisan db:seed
