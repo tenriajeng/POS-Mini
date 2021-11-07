@@ -18,9 +18,15 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::orderBy('created_at', 'DESC')->paginate(10);
+        $query =  Product::orderBy('created_at', 'DESC');
+
+        if (isset($request)) {
+            $query->orWhere('name', 'like', '%' . $request['search'] . '%');
+        }
+
+        $products = $query->paginate(10);
         return view('admin.product.index')->with('products', $products);
     }
 
