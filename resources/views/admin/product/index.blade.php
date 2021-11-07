@@ -16,7 +16,7 @@ Product Menu
                             <div class="col-6">
                                 <form action="{{ route('admin.product.index') }}" method="GET">
                                     <div class="input-group">
-                                        <input class="form-control" name="search">
+                                        <input class="form-control" name="search" placeholder="search name">
                                         <div class="input-group-append">
                                             <input class="btn btn-success" type="submit" value="search">
                                         </div>
