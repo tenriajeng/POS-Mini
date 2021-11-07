@@ -38,10 +38,10 @@
                 </td>
                 <td>{{ $product->created_at }}</td>
                 <td>
-                    <a href="{{ route('admin.product.edit', $product->id) }}" class="btn btn-info">
+                    <a href="{{ route('admin.product.edit', $product->id) }}" class="btn btn-info m-1">
                         <i class="fas fa-edit"></i>
                     </a>
-                    <button onclick="deleteFunction({{ $product->id }})" class="btn btn-danger">
+                    <button onclick="deleteFunction({{ $product->id }})" class="btn btn-danger m-1">
                         <i class="fas fa-trash"></i>
                     </button>
 
