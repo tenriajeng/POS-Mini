@@ -12,8 +12,24 @@ User Menu
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{ route('admin.user.create') }}" class="btn btn-primary float-right">Create New
-                            User</a>
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <form action="{{ route('admin.user.index') }}" method="GET">
+                                    <div class="input-group mb-3">
+                                        <input class="form-control" name="search">
+                                        <div class="input-group-append">
+                                            <input class="btn btn-success" type="submit" value="search">
+                                        </div>
+
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-6">
+                                <a href="{{ route('admin.user.create') }}" class="btn btn-primary float-right">Create
+                                    New
+                                    User</a>
+                            </div>
+                        </div>
                     </div>
                     <!-- ./card-header -->
                     <div class="card-body">
