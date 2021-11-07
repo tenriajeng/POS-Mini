@@ -12,23 +12,39 @@ Sales Menu
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <a href="{{ route('admin.sale.create') }}" class="btn btn-primary float-right">Create New
-                            sale</a>
-                    </div>
-                    <!-- ./card-header -->
-                    <div class="card-body">
-                        @include('admin.sale.table')
-                    </div>
-                    <div class="card-footer">
-                        {!! $sales->links() !!}
-                    </div>
+                        <div class="row align-items-center">
+                            <div class="col-6">
+                                <form action="{{ route('admin.sale.index') }}" method="GET">
+                                    <div class="input-group">
+                                        <input type="date" class="form-control" name="search">
+                                        <div class="input-group-append">
+                                            <input class="btn btn-success" type="submit" value="search">
+                                        </div>
 
-                    <!-- /.card-body -->
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-6">
+                                <a href="{{ route('admin.sale.create') }}" class="btn btn-primary float-right">Create
+                                    New
+                                    sale</a>
+                            </div>
+
+                        </div>
+                        <!-- ./card-header -->
+                        <div class="card-body">
+                            @include('admin.sale.table')
+                        </div>
+                        <div class="card-footer">
+                            {!! $sales->links() !!}
+                        </div>
+
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
                 </div>
-                <!-- /.card -->
             </div>
         </div>
-    </div>
 </section>
 <!-- Main content -->
 @endsection

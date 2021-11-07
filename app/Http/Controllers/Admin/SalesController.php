@@ -17,9 +17,17 @@ class SalesController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $sales = Sales::orderBy('created_at', 'DESC')->paginate(10);
+        $query = Sales::orderBy('created_at', 'DESC');
+
+        if (isset($request['search'])) {
+            $date = date('Y-m-d', strtotime($request['search']));
+
+            $query->orWhere('created_at', 'like', '%' . $date . '%');
+        }
+
+        $sales = $query->paginate(10);
         return view('admin.sale.index')->with('sales', $sales);
     }
 
