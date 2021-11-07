@@ -24,7 +24,7 @@ class SupplierFactory extends Factory
         return [
             'name' => $this->faker->unique()->text(12),
             'phone' => $this->faker->phoneNumber,
-            'address' => $this->faker->text(12)
+            'address' => $this->faker->text(50)
         ];
     }
 }

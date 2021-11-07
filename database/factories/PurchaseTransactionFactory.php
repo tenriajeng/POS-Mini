@@ -23,11 +23,15 @@ class PurchaseTransactionFactory extends Factory
      */
     public function definition()
     {
+        $stock = $this->faker->numberBetween(1, 100);
+        $price = $this->faker->numberBetween(10000, 1000000) * $stock;
+        $product = Product::all()->random()->first();
+
         return [
-            'supplier_id' => Supplier::all()->random()->id,
-            'product_id' => Product::all()->random()->id,
-            'price' => $this->faker->numberBetween(10000, 1000000),
-            'stock' => $this->faker->numberBetween(1, 100),
+            'supplier_id' => $product->supplier_id,
+            'product_id' => $product->id,
+            'price' => $price,
+            'stock' => $stock,
         ];
     }
 }
