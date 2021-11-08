@@ -50,3 +50,12 @@ https://drive.google.com/file/d/1juUYUQHwNzaYHdm4YB9RJyiEIy-NEx91/view?usp=shari
 ```sh
 https://drive.google.com/file/d/1YqF3d9Vmh_thKGcbLrP58W7hY3V9vIcI/view?usp=sharing
 ```
+
+
+## USE CASE DIAGRAM
+
+```sh
+https://drive.google.com/file/d/1bL-UNqyglW3a5SNF3zIYnFpdYBhclMS6/view?usp=sharing
+```
+
+
