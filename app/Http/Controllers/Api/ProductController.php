@@ -30,16 +30,6 @@ class ProductController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('admin.product.create');
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
@@ -103,7 +93,7 @@ class ProductController extends Controller
             }
         }
 
-        return  ['data' => 'Product updated'];
+        return response()->json(['data' => 'Product updated'], 200);
     }
 
     /**
